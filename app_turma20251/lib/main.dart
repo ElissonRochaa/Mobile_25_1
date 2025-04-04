@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
               ),
             ),
             Row(
-              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 ElevatedButton(
                   onPressed: () {
@@ -37,6 +37,12 @@ class MyApp extends StatelessWidget {
                   }, 
                   child: Text("Cadastrar"),
                   ),
+                // Container(
+                //   width: 40,
+                // ),
+                SizedBox(
+                  width: 20,
+                ),
                 Container(
                   decoration: BoxDecoration(
                     color: Colors.amber,
@@ -59,7 +65,12 @@ class MyApp extends StatelessWidget {
             ),
             Container(
               width: 100,
-              child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSidfKqObBg307erYqfx0BuI-sp0Bh5b3q4fw&s'),
+              decoration: BoxDecoration(
+                borderRadius: BorderRadius.circular(20),
+                color: Colors.blue,
+                border: Border.all(color: Colors.black),
+              ),
+              child: Expanded(child: Image.network('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSidfKqObBg307erYqfx0BuI-sp0Bh5b3q4fw&s'),),
             )
           ],
         ),
