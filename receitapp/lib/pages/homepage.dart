@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:receitapp/widgets/linha_widget.dart';
+import 'package:receitapp/widgets/receita_card_widget.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -18,28 +19,19 @@ class HomePage extends StatelessWidget {
       body: Column(
         children: [
           LinhaWidget('Café da Manhã'),
-          Stack(children: [
-            Container(
-              decoration: BoxDecoration(
-                color: Theme.of(context).colorScheme.secondary,
-                borderRadius: BorderRadius.circular(20),
-              ),
-              height: 136,
-              width: 136,
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                ReceitaCardWidget('Tapioca com Queijo', 0.74, true, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY5LHQFV-DU5SKonCG9ayBDER86b6JhGcTSA&s'),
+                SizedBox(width: 20),
+                ReceitaCardWidget('Pao assado', 2.25, false, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY5LHQFV-DU5SKonCG9ayBDER86b6JhGcTSA&s'),
+                SizedBox(width: 20),
+                ReceitaCardWidget('Pao assado', 2.25, false, 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY5LHQFV-DU5SKonCG9ayBDER86b6JhGcTSA&s'),
+              ],
             ),
-            Container(
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  image: NetworkImage('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSY5LHQFV-DU5SKonCG9ayBDER86b6JhGcTSA&s'),
-                  fit: BoxFit.cover,
-                ),
-                borderRadius: BorderRadius.circular(20),
-              ),
-              width: 120,
-              height: 88,
-              margin: EdgeInsets.only(left: 8, top: 8),
-            ),
-          ]),
+          ),
+          
           LinhaWidget('Almoço'),
           LinhaWidget('Jantar'),
         ],
