@@ -31,7 +31,6 @@ class HomePage extends StatelessWidget {
               ],
             ),
           ),
-          
           LinhaWidget('Almoço'),
           LinhaWidget('Jantar'),
         ],
