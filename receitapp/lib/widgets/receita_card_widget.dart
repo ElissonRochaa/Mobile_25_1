@@ -106,30 +106,35 @@ class _ReceitaCardWidgetState extends State<ReceitaCardWidget> {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-      Container(
-        decoration: BoxDecoration(
-          color: Theme.of(context).colorScheme.secondary,
-          borderRadius: BorderRadius.circular(20),
+    return GestureDetector(
+      onTap: () {
+        print("Clicou na receita ${widget.nomeReceita}");
+      },
+      child: Stack(
+        children: [
+        Container(
+          decoration: BoxDecoration(
+            color: Theme.of(context).colorScheme.secondary,
+            borderRadius: BorderRadius.circular(20),
+          ),
+          height: 136,
+          width: 136,
         ),
-        height: 136,
-        width: 136,
-      ),
-      Positioned(
-        top: 8,
-        left: 8,
-        child: _buildImageWithLabel(context),
-      ),
-      Positioned(
-        left: 8,
-        bottom: 12,
-        child: _buildStars(context),
-      ),
-      Transform.translate(
-        offset: Offset(110, 110),
-        child: _buildBookmark(context),
-      ),
-    ]);
+        Positioned(
+          top: 8,
+          left: 8,
+          child: _buildImageWithLabel(context),
+        ),
+        Positioned(
+          left: 8,
+          bottom: 12,
+          child: _buildStars(context),
+        ),
+        Transform.translate(
+          offset: Offset(110, 110),
+          child: _buildBookmark(context),
+        ),
+      ]),
+    );
   }
 }
